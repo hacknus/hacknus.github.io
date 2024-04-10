@@ -1,24 +1,24 @@
 {
   "basics": {
-    "name": "Albert Einstein",
+    "name": "Linus Leo Stöckli",
     "label": "Scientist",
-    "image": "",
-    "email": "albert@einstein.de",
+    "image": "passfoto_neu.jpg",
+    "email": "linus.stoeckli@unibe.ch",
     "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "url": "https://hacknus.github.io/",
+    "summary": "A Swiss experimental astrophysicist.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "Gesellschaftstrasse 6",
+      "postalCode": "3012",
+      "city": "Bern",
+      "countryCode": "CH",
+      "region": "Bern"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "",
+        "username": "",
+        "url": ""
       }
     ]
   },
