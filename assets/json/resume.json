@@ -58,6 +58,22 @@
       "startDate": "2019-09-01",
       "endDate": "2020-09-01",
       "summary": "Students association for physics students at the University of Zurich."
+    },
+    {
+      "organization": "University of Bern",
+      "position": "Organization Committee Junior Research Association (JURA)",
+      "url": "https://nccr-planets.ch/junior-researchers-assembly-jura-iv-2023/",
+      "startDate": "2023-09-01",
+      "endDate": "2022-09-01",
+      "summary": "JURA is a conference for junior researcher funded by planetS. "
+    }^,
+    {
+      "organization": "University of Bern",
+      "position": "Outreach",
+      "url": "https://space.unibe.ch",
+      "startDate": "2022-02-01",
+      "endDate": "2026-02-01",
+      "summary": "Contributed to various outreach events (guided tours) at the University of Bern."
     }
   ],
   "education": [
