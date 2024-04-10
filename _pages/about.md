@@ -9,7 +9,7 @@ profile:
   image: passfoto_neu.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>212</p>
+    <p>Office 212</p>
     <p>Gesellschaftstrasse 6</p>
     <p>3012 Bern, Switzerland</p>
 
