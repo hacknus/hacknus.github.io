@@ -2,11 +2,19 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: Materials for courses.
 nav: true
 nav_order: 6
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+University of Bern (UniBe)
+2022 - 
+- Physics for Veterinarians
+- Physics Lab Course for Pharmacy Students
+- Physics Lab Course for Physics Students
 
-Organize your courses by years, topics, or universities, however you like!
+University of Zürich (UZH)
+2018 - 2021:
+- Physics for Chemistry Students
+- Physics for Life Science Students
+- Introductory Lab Course for Physics Students (Electronics)
