@@ -13,6 +13,14 @@ Only high voltage solutions (110V or 230V) exist, which also include an inverter
 This is a simple, open source UPS, based around an STM32F405 and written in Rust.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ups_electronics_2.png" title="UPS electronics close up" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Electronics close up of the UPS.
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/ups_render.png" title="UPS inside view" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
