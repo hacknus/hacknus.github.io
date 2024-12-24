@@ -165,128 +165,128 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 ##  - name: medium.com
 ##    rss_url: https://medium.com/@al-folio/feed
 
-# -----------------------------------------------------------------------------
-# Collections
-# -----------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
+## Collections
+## -----------------------------------------------------------------------------
+#
+#collections:
+#  news:
+#    defaults:
+#      layout: post
+#    output: true
+#    permalink: /news/:path/
+#  projects:
+#    output: true
+#    permalink: /projects/:path/
+#
+#announcements:
+#  enabled: true
+#  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+#  limit: 5 # leave blank to include all the news in the `_news` folder
+#
+#latest_posts:
+#  enabled: true
+#  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+#  limit: 3 # leave blank to include all the blog posts
 
-collections:
-  news:
-    defaults:
-      layout: post
-    output: true
-    permalink: /news/:path/
-  projects:
-    output: true
-    permalink: /projects/:path/
-
-announcements:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
-
-# -----------------------------------------------------------------------------
-# Jekyll settings
-# -----------------------------------------------------------------------------
-
-# Markdown and syntax highlight
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    css_class: "highlight"
-    span:
-      line_numbers: false
-    block:
-      line_numbers: false
-      start_line: 1
-
-# Includes & excludes
-include: ["_pages"]
-exclude:
-  - bin/
-  - CONTRIBUTING.md
-  - CUSTOMIZE.md
-  - Dockerfile
-  - docker-compose.yml
-  - docker-compose-slim.yml
-  - FAQ.md
-  - Gemfile
-  - Gemfile.lock
-  - INSTALL.md
-  - LICENSE
-  - lighthouse_results/
-  - package.json
-  - package-lock.json
-  - _pages/profiles.md
-  - _pages/dropdown.md
-  - _pages/about_einstein.md
-  - purgecss.config.js
-  - README.md
-  - readme_preview/
-  - vendor
-keep_files:
-  - CNAME
-  - .nojekyll
-
-# Plug-ins
-plugins:
-  - jekyll-archives
-  - jekyll-email-protect
-  - jekyll-feed
-  - jekyll-get-json
-  - jekyll-imagemagick
-  - jekyll-jupyter-notebook
-  - jekyll-link-attributes
-  - jekyll-minifier
-  - jekyll-paginate-v2
-  - jekyll/scholar
-  - jekyll-sitemap
-  - jekyll-toc
-  - jekyll-twitter-plugin
-  - jemoji
-
-# Sitemap settings
-defaults:
-  - scope:
-      path: "assets"
-    values:
-      sitemap: false
-
-sass:
-  style: compressed
-
-# -----------------------------------------------------------------------------
-# Jekyll Minifier
-# -----------------------------------------------------------------------------
-
-jekyll-minifier:
-  exclude: ["robots.txt"]
-  uglifier_args:
-    harmony: true
-
-# -----------------------------------------------------------------------------
-# Jekyll Archives
-# -----------------------------------------------------------------------------
-
-jekyll-archives:
-  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-  layouts:
-    year: archive-year
-    tag: archive-tag
-    category: archive-category
-  permalinks:
-    year: "/blog/:year/"
-    tag: "/blog/tag/:name/"
-    category: "/blog/category/:name/"
-
-display_tags: ["formatting", "images", "links", "math", "code"] # these tags will be displayed on the front page of your blog
-display_categories: ["blockquotes"] # these categories will be displayed on the front page of your blog
+## -----------------------------------------------------------------------------
+## Jekyll settings
+## -----------------------------------------------------------------------------
+#
+## Markdown and syntax highlight
+#markdown: kramdown
+#highlighter: rouge
+#kramdown:
+#  input: GFM
+#  syntax_highlighter_opts:
+#    css_class: "highlight"
+#    span:
+#      line_numbers: false
+#    block:
+#      line_numbers: false
+#      start_line: 1
+#
+## Includes & excludes
+#include: ["_pages"]
+#exclude:
+#  - bin/
+#  - CONTRIBUTING.md
+#  - CUSTOMIZE.md
+#  - Dockerfile
+#  - docker-compose.yml
+#  - docker-compose-slim.yml
+#  - FAQ.md
+#  - Gemfile
+#  - Gemfile.lock
+#  - INSTALL.md
+#  - LICENSE
+#  - lighthouse_results/
+#  - package.json
+#  - package-lock.json
+#  - _pages/profiles.md
+#  - _pages/dropdown.md
+#  - _pages/about_einstein.md
+#  - purgecss.config.js
+#  - README.md
+#  - readme_preview/
+#  - vendor
+#keep_files:
+#  - CNAME
+#  - .nojekyll
+#
+## Plug-ins
+#plugins:
+#  - jekyll-archives
+#  - jekyll-email-protect
+#  - jekyll-feed
+#  - jekyll-get-json
+#  - jekyll-imagemagick
+#  - jekyll-jupyter-notebook
+#  - jekyll-link-attributes
+#  - jekyll-minifier
+#  - jekyll-paginate-v2
+#  - jekyll/scholar
+#  - jekyll-sitemap
+#  - jekyll-toc
+#  - jekyll-twitter-plugin
+#  - jemoji
+#
+## Sitemap settings
+#defaults:
+#  - scope:
+#      path: "assets"
+#    values:
+#      sitemap: false
+#
+#sass:
+#  style: compressed
+#
+## -----------------------------------------------------------------------------
+## Jekyll Minifier
+## -----------------------------------------------------------------------------
+#
+#jekyll-minifier:
+#  exclude: ["robots.txt"]
+#  uglifier_args:
+#    harmony: true
+#
+## -----------------------------------------------------------------------------
+## Jekyll Archives
+## -----------------------------------------------------------------------------
+#
+#jekyll-archives:
+#  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+#  layouts:
+#    year: archive-year
+#    tag: archive-tag
+#    category: archive-category
+#  permalinks:
+#    year: "/blog/:year/"
+#    tag: "/blog/tag/:name/"
+#    category: "/blog/category/:name/"
+#
+#display_tags: ["formatting", "images", "links", "math", "code"] # these tags will be displayed on the front page of your blog
+#display_categories: ["blockquotes"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
