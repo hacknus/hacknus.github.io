@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Vacuum Gateway Unit
-description: A vacuum-grade gateway (VGU) to read out local sensors inside a vacuum chamber and communicate with devices outisde.
-img: assets/img/vgu_render.png
-importance: 3
+title: Electronics Unit
+description: The ELU is the main control unit for the COCoNuT experiment.
+img: assets/img/elu_render.png
+importance: 2
 category: work
 ---
 
@@ -43,8 +43,8 @@ To give your project a background in the portfolio page, just add the img tag to
     This image can also have a caption. It's like magic.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
+You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
+Say you wanted to write a bit about your project before you posted the rest of the images.
 You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
 
 <div class="row justify-content-sm-center">

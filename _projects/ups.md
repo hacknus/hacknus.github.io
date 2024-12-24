@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Open-Source Uninterruptible Power Supply
-description: A 12V UPS designed to be used for usage in home applications with NAS devices.
-# img: assets/img/ups
+title: Open-Source UPS
+description: A 12V uninterruptible power supply designed to be used for usage in home applications with NAS devices.
+img: assets/img/ups_render.png
 importance: 3
 category: fun
 ---

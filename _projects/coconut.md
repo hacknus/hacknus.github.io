@@ -1,8 +1,8 @@
 ---
 layout: page
-title: COCoNuT (Characteristic Observation of Cometary Nuclei using THz-spectroscopy)
-description: COCoNuT is a vacuum chamber designed to simulate the conditions found on comets. It is used to investivate the application of THz time domain spectroscopy on cometary analogues/samples.
-# img: assets/img/coconut.jpg
+title: COCoNuT
+description: COCoNuT (Characteristic Observation of Cometary Nuclei using THz-spectroscopy) is a vacuum chamber designed to simulate the conditions found on comets. It is used to investivate the application of THz time domain spectroscopy on cometary analogues/samples.
+img: assets/img/coconut.png
 importance: 1
 category: work
 related_publications: true

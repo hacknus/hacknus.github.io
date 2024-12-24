@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Supersonic Pitot Tube for a Sounding Rocket
+title: Supersonic Pitot Tube
 description: We developed a supersonic pitot tube with integrated electronics for sounding rockets.
 img: assets/img/pitot_render.png
 importance: 4
