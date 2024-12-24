@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
+title: Bijou Espresso Machine
+description: An portafilter espresso machine designed from the grounds up.
+# img: assets/img/bijou.jpg
 importance: 3
 category: fun
 ---

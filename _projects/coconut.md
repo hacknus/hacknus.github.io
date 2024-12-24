@@ -1,11 +1,11 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
-importance: 2
+title: COCoNuT (Characteristic Observation of Cometary Nuclei using THz-spectroscopy)
+description: COCoNuT is a vacuum chamber designed to simulate the conditions found on comets. It is used to investivate the application of THz time domain spectroscopy on cometary analogues/samples.
+# img: assets/img/coconut.jpg
+importance: 1
 category: work
-giscus_comments: true
+related_publications: true
 ---
 
 Every project has a beautiful feature showcase page.
@@ -44,8 +44,8 @@ To give your project a background in the portfolio page, just add the img tag to
     This image can also have a caption. It's like magic.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
+You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
+Say you wanted to write a bit about your project before you posted the rest of the images.
 You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
 
 <div class="row justify-content-sm-center">

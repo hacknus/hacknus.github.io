@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
+title: Vacuum Gateway Unit
+description: A vacuum-grade gateway to read out local sensors inside a vacuum chamber and communicate with devices outisde.
+img: assets/img/7.jpg
 importance: 3
-category: fun
+category: work
 ---
 
 Every project has a beautiful feature showcase page.
