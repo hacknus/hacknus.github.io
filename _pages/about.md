@@ -23,3 +23,4 @@ I completed my Bachelor studies in Physics at the University of Zurich (UZH) and
 Currently doing my PhD at UniBe focusing on cometary and planetary research and instrumentation.
 
 I enjoy working on hardware and software side projects, most of them include the design, assembly and programming of electronics.
+I have published several software packages on **github**, **crates.io** and **pypi**.
