@@ -21,7 +21,7 @@ The system can reach pressures of $10^{-7}$ mbar and temperatures of 50 K. For 2
     Overview of COCoNuT.
 </div>
 
-The design and commissioning of this setup is documented in this publication {% cite stoeckli_coconut_2024 %}.
+The design and commissioning of this setup is documented in this publication {% cite stoeckli_coconut_2025 %}.
 
 The setup is controlled by the [Electronics Unit (ELU)](https://hacknus.github.io/projects/elu/).
 <div class="row">
