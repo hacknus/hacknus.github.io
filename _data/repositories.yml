@@ -3,6 +3,7 @@ github_users:
 
 github_repos:
   - hacknus/serial-monitor-rust
+  - unibe-icelab/thz-image-explorer
   - hacknus/bijou-espresso-ctrl-rust
   - aris-space/aris-pitot-tube
   - hacknus/n-body-solver-rust
