@@ -18,9 +18,10 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-PhD Student in astrophysics, based in Bern.
-I completed my Bachelor studies in Physics at the University of Zurich (UZH) and my Master studies in Applied Astrophysics at the University of Bern (UniBe).
-Currently doing my PhD at UniBe focusing on cometary and planetary research and instrumentation.
+Researcher, based in Bern.
+I completed my Bachelor studies in Physics at the University of Zurich (UZH), my Master studies in Applied Astrophysics at the University of Bern (UniBe)
+and my PhD also at UniBe with the focus on THz spectroscopy for cometary exploration.
+I'm currently a researcher at UniBe focusing on cometary and planetary research and instrumentation.
 
 I enjoy working on hardware and software side projects, most of them include the design, assembly and programming of electronics.
 I have published several software packages on **github**, **crates.io** and **pypi**.
