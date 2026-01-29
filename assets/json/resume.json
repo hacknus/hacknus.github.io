@@ -8,7 +8,7 @@
     "url": "https://hacknus.github.io/",
     "summary": "A Swiss experimental astrophysicist.",
     "location": {
-      "address": "Gesellschaftstrasse 6",
+      "address": "Gesellschaftsstrasse 6",
       "postalCode": "3012",
       "city": "Bern",
       "countryCode": "CH",
@@ -25,12 +25,29 @@
   "work": [
     {
       "name": "University of Bern",
+      "position": "Researcher",
+      "url": "https://unibe.ch",
+      "startDate": "2026-02-01",
+      "endDate": "2026-05-31",
+      "summary": "Investigating THz TDS spectroscopy for in-situ comet measurements.",
+      "highlights": [
+        "Astrophysics",
+        "Instrumentation",
+        "THz-spectroscopy"
+      ]
+    },
+    {
+      "name": "University of Bern",
       "position": "PhD Student",
       "url": "https://unibe.ch",
       "startDate": "2022-02-01",
-      "endDate": "2026-02-01",
+      "endDate": "2026-01-31",
       "summary": "Investigating THz TDS spectroscopy for in-situ comet measurements.",
-      "highlights": ["Astrophysics", "Instrumentation", "THz-spectroscopy"]
+      "highlights": [
+        "Astrophysics",
+        "Instrumentation",
+        "THz-spectroscopy"
+      ]
     }
   ],
   "volunteer": [
@@ -41,7 +58,9 @@
       "startDate": "2019-01-09",
       "endDate": "2022-01-09",
       "summary": "Worked on the electronics and structures of a supersonic rocket named EULER. ARIS is a students association focusing on building rockets, based at ETH Zürich.",
-      "highlights": ["EuRoC 2020 Technical Excellence Award"]
+      "highlights": [
+        "EuRoC 2020 Technical Excellence Award"
+      ]
     },
     {
       "organization": "Fachverein Physik Universität Zürich (FPU)",
@@ -96,8 +115,7 @@
       "startDate": "2019-09-01",
       "endDate": "2021-09-01",
       "score": "Summa Cum Laude"
-    }
-    ,
+    },
     {
       "institution": "University of Bern, Bern, Switzerland",
       "location": "Bern, Switzerland",
@@ -105,7 +123,7 @@
       "area": "Physics with special qualification in astronomy",
       "studyType": "PhD",
       "startDate": "2024-02-01",
-      "endDate": "2026-02-01"
+      "endDate": "2026-01-31"
     }
   ],
   "awards": [
@@ -207,7 +225,9 @@
     {
       "name": "EULER",
       "summary": "Building a supersonic rocket as a student team.\nReceived the Technical Excellence Award award the the European Rocketry Challenge 2020 (EuRoC).",
-      "highlights": ["Engineering"],
+      "highlights": [
+        "Engineering"
+      ],
       "startDate": "2019-09-01",
       "endDate": "2021-09-01",
       "url": "https://aris-space.ch/project-euler/"
@@ -215,7 +235,10 @@
     {
       "name": "TEMPus VoLA",
       "summary": "I joined the project before their third flight campaign on board the zero-G Airbus 310 from Novespace in Bordeaux. I helped with the mechanical and electrical tests of the system and was given the amazing opportunity to help operate the experiment on two flights with 31 parabolas each.",
-      "highlights": ["Astrophysics", "Engineering"],
+      "highlights": [
+        "Astrophysics",
+        "Engineering"
+      ],
       "startDate": "2022-02-01",
       "endDate": "2022-05-01",
       "url": "https://nccr-planets.ch/blog/2020/06/15/planetary-research-in-weightlessness/"
