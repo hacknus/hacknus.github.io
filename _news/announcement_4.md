@@ -11,4 +11,4 @@ related_posts: false
   </a>
 </p>
 
-Our PhD thesis is available: <a href="/assets/pdfs/phd_thesis.pdf" target="_blank" rel="noopener noreferrer">Download the PDF</a>.
+I have successfully defended my PhD dissertation! <a href="/assets/pdfs/phd_thesis.pdf" target="_blank" rel="noopener noreferrer">Download the PDF</a>.
