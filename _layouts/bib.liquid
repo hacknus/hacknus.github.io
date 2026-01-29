@@ -12,7 +12,7 @@
             include figure.liquid
             loading="eager"
             path=entry_path
-            sizes="200px"
+            sizes = "200px"
             class="preview z-depth-1 rounded"
             zoomable=false
             alt=entry.preview
@@ -24,9 +24,13 @@
           {% if site.data.venues[entry.abbr].color != blank %}
             {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
           {% endif %}
-          <abbr class="badge" {% if venue_style %}{{ venue_style }}{% endif %}>
-            <a href="{{ site.data.venues[entry.abbr].url }}">{{ entry.abbr }}</a>
-          </abbr>
+          <abbr
+            class="badge"
+            {% if venue_style %}
+              {{ venue_style }}
+            {% endif %}
+            ><a href="{{site.data.venues[entry.abbr].url}}">{{ entry.abbr }}</a></abbr
+          >
         {% else %}
           <abbr class="badge">{{ entry.abbr }}</abbr>
         {% endif %}
@@ -34,13 +38,14 @@
     </div>
   {% endif %}
 
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <!-- Entry bib key -->
+  <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
-
-    <!-- Authors -->
+    <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
+
       {% assign author_array_limit = author_array_size %}
       {% if site.max_author_limit and author_array_size > site.max_author_limit %}
         {% assign author_array_limit = site.max_author_limit %}
@@ -49,68 +54,75 @@
       {%- for author in entry.author_array limit: author_array_limit -%}
         {% assign author_is_self = false %}
         {%- assign author_last_name = author.last | remove: '¶' | remove: '&' | remove: '*' | remove: '†' | remove: '^' -%}
-        {% assign clean_last_name = author_last_name | downcase | remove_accents -%}
-        {% if site.scholar.last_name contains author_last_name and site.scholar.first_name contains author.first %}
-          {% assign author_is_self = true %}
-        {% endif %}
-
+        {% if site.scholar.last_name contains author_last_name %}
+          {% if site.scholar.first_name contains author.first %}
+            {% assign author_is_self = true %}
+          {% endif %}
+        {%- endif -%}
         {% assign coauthor_url = null %}
+        {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
         {% if site.data.coauthors[clean_last_name] %}
           {%- for coauthor in site.data.coauthors[clean_last_name] -%}
             {% if coauthor.firstname contains author.first %}
-              {% assign coauthor_url = coauthor.url %}
+              {%- assign coauthor_url = coauthor.url -%}
               {% break %}
             {% endif %}
           {% endfor %}
-        {% endif %}
+        {%- endif -%}
 
         {%- if forloop.length > 1 -%}
           {% if forloop.first == false %},&nbsp;{% endif %}
           {%- if forloop.last and author_array_limit == author_array_size %}and&nbsp;{% endif -%}
         {% endif %}
-
         {%- if author_is_self -%}
-          <em>{{ author.first }} {{ author.last }}</em>
+          <em>
+            {{- author.first }}
+            {{ author.last -}}
+          </em>
         {%- else -%}
-          {% if coauthor_url %}
-            <a href="{{ coauthor_url }}">{{ author.first }} {{ author.last }}</a>
-          {% else %}
-            {{ author.first }} {{ author.last }}
+          {%- if coauthor_url -%}
+            <a href="{{coauthor_url}}">
+              {{- author.first }}
+              {{ author.last -}}
+            </a>
+          {%- else -%}
+            {{ author.first }}
+            {{ author.last }}
           {% endif %}
         {%- endif -%}
       {% endfor %}
+      {%- assign more_authors = author_array_size | minus: author_array_limit -%}
 
-      {% assign more_authors = author_array_size | minus: author_array_limit %}
+      {%- assign more_authors_hide = more_authors | append: ' more author' -%}
       {% if more_authors > 0 %}
-        {% assign more_authors_hide = more_authors | append: ' more author' %}
-        {% if more_authors > 1 %}
+        {%- if more_authors > 1 -%}
           {% assign more_authors_hide = more_authors_hide | append: 's' %}
-        {% endif %}
+        {%- endif -%}
         {% assign more_authors_show = '' %}
-        {% for author in entry.author_array offset: author_array_limit %}
+        {%- for author in entry.author_array offset: author_array_limit -%}
           {% assign more_authors_show = more_authors_show | append: author.first | append: ' ' | append: author.last %}
           {% unless forloop.last %}
             {% assign more_authors_show = more_authors_show | append: ', ' %}
           {% endunless %}
-        {% endfor %}
+        {%- endfor -%}
         , and
         <span
           class="more-authors"
-          title="click to view {{ more_authors_hide }}"
+          title="click to view {{more_authors_hide}}"
           onclick="
-            var element = $(this);
-            element.attr('title', '');
-            var more_authors_text = element.text() == '{{ more_authors_hide }}' ? '{{ more_authors_show }}' : '{{ more_authors_hide }}';
-            var cursorPosition = 0;
-            var textAdder = setInterval(function(){
-              element.text(more_authors_text.substring(0, cursorPosition + 1));
-              if (++cursorPosition == more_authors_text.length){
-                clearInterval(textAdder);
-              }
-            }, '{{ site.more_authors_animation_delay }}');
+              var element = $(this);
+              element.attr('title', '');
+              var more_authors_text = element.text() == '{{more_authors_hide}}' ? '{{more_authors_show}}' : '{{more_authors_hide}}';
+              var cursorPosition = 0;
+              var textAdder = setInterval(function(){
+                element.text(more_authors_text.substring(0, cursorPosition + 1));
+                if (++cursorPosition == more_authors_text.length){
+                  clearInterval(textAdder);
+                }
+            }, '{{site.more_authors_animation_delay}}');
           "
         >
-          {{ more_authors_hide }}
+          {{- more_authors_hide -}}
         </span>
       {% endif %}
     </div>
@@ -118,40 +130,34 @@
     <!-- Journal/Book title and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
-
     {% if entry.type == 'article' %}
-      {% capture entrytype %}<em>{{ entry.journal }}</em>{% endcapture %}
+      {% capture entrytype %}<em>{{entry.journal}}</em>{% endcapture %}
     {% elsif proceedings contains entry.type %}
-      {% capture entrytype %}<em>In {{ entry.booktitle }}</em>{% endcapture %}
+      {% capture entrytype %}<em>In {{entry.booktitle}}</em> {% endcapture %}
     {% elsif thesis contains entry.type %}
-      {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
+      {% capture entrytype %}<em>{{entry.school}}</em> {% endcapture %}
     {% else %}
       {% capture entrytype %}{% endcapture %}
     {% endif %}
-
-    {% capture entrymonth %}{% if entry.month %} {{ entry.month | capitalize }}{% endif %}{% endcapture %}
-    {% capture entryyear %}{% if entry.year %} {{ entry.year }}{% endif %}{% endcapture %}
-
+    {% if entry.month %}
+      {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
+    {% endif %}
+    {% if entry.year %}
+      {% capture entryyear %}{{ " " }}{{entry.year}}{% endcapture %}
+    {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
-
     <div class="periodical">
       {{ periodical | strip }}
-      {% assign extra = "" %}
-      {% if entry.note and entry.note != "" %}
-        {% assign extra = entry.note | strip %}
-      {% elsif entry.type and entry.type != "" %}
-        {% assign extra = entry.type | strip %}
-      {% endif %}
-      {% if extra != "" %}
-        {% if periodical | strip != "" %}, {% endif %}{{ extra }}
-      {% endif %}
+    </div>
+    <div class="periodical">
+      {{ entry.note | strip }}
     </div>
 
     <!-- Links/Buttons -->
     <div class="links">
       {% if entry.award %}
-        <a class="award btn btn-sm z-depth-0" role="button">{{ entry.award_name | default: "Awarded" }}</a>
+        <a class="award btn btn-sm z-depth-0" role="button">{{ entry.award_name ? entry.award_name : "Awarded" }}</a>
       {% endif %}
       {% if entry.abstract %}
         <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
@@ -210,15 +216,15 @@
         <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
       {% endif %}
     </div>
-
     {% if site.enable_publication_badges %}
-      {% assign entry_has_altmetric_badge = entry.altmetric or entry.doi or entry.eprint or entry.pmid or entry.isbn %}
+      {% assign entry_has_altmetric_badge = entry.altmetric or entry.doi or  entry.eprint or entry.pmid or entry.isbn %}
       {% assign entry_has_dimensions_badge = entry.dimensions or entry.doi or entry.pmid %}
       {% assign entry_has_google_scholar_badge = entry.google_scholar_id %}
       {% if entry_has_altmetric_badge or entry_has_dimensions_badge or entry_has_google_scholar_badge %}
         <div class="badges">
           {% if site.enable_publication_badges.altmetric and entry_has_altmetric_badge %}
-            <span class="altmetric-embed"
+            <span
+              class="altmetric-embed"
               data-hide-no-mentions="true"
               data-hide-less-than="15"
               data-badge-type="2"
@@ -233,14 +239,15 @@
                 data-pmid="{{ entry.pmid }}"
               {% elsif entry.isbn %}
                 data-isbn="{{ entry.isbn }}"
-              {% endif %}>
-            </span>
+              {% endif %}
+            ></span>
           {% endif %}
           {% if site.enable_publication_badges.dimensions and entry_has_dimensions_badge %}
-            <span class="__dimensions_badge_embed__"
+            <span
+              class="__dimensions_badge_embed__"
               {% if entry.doi %}
                 data-doi="{{ entry.doi }}"
-              {% elsif entry.pmid %}
+              {% else %}
                 data-pmid="{{ entry.pmid }}"
               {% else %}
                 data-id="{{ entry.dimensions }}"
@@ -248,12 +255,19 @@
               data-hide-zero-citations="true"
               data-style="small_rectangle"
               data-legend="hover-right"
-              style="margin-bottom: 3px;">
-            </span>
+              style="margin-bottom: 3px;"
+            ></span>
           {% endif %}
           {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
-            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.scholar_userid }}&citation_for_view={{ site.scholar_userid }}:{{ entry.google_scholar_id }}" aria-label="Google Scholar link" role="button">
-              <img src="https://img.shields.io/badge/scholar-{% google_scholar_citations site.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige" alt="{% google_scholar_citations site.scholar_userid entry.google_scholar_id %} Google Scholar citations">
+            <a
+              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.scholar_userid }}&citation_for_view={{ site.scholar_userid }}:{{ entry.google_scholar_id }}"
+              aria-label="Google Scholar link"
+              role="button"
+            >
+              <img
+                src="https://img.shields.io/badge/scholar-{% google_scholar_citations site.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige"
+                alt="{% google_scholar_citations site.scholar_userid entry.google_scholar_id %} Google Scholar citations"
+              >
             </a>
           {% endif %}
         </div>
@@ -261,22 +275,30 @@
     {% endif %}
 
     {% if entry.award %}
-      <div class="award hidden d-print-inline"><p>{{ entry.award | markdownify }}</p></div>
+      <!-- Hidden Award block -->
+      <div class="award hidden d-print-inline">
+        <p>{{ entry.award | markdownify }}</p>
+      </div>
     {% endif %}
 
     {% if entry.abstract %}
-      <div class="abstract hidden"><p>{{ entry.abstract }}</p></div>
+      <!-- Hidden abstract block -->
+      <div class="abstract hidden">
+        <p>{{ entry.abstract }}</p>
+      </div>
     {% endif %}
 
     {% if entry.bibtex_show %}
+      <!-- Hidden bibtex block -->
       <div class="bibtex hidden">
         {% highlight bibtex %}
-{{- entry.bibtex | hideCustomBibtex -}}
+        {{- entry.bibtex | hideCustomBibtex -}}
         {% endhighlight %}
       </div>
     {% endif %}
 
     {% if entry.video %}
+      <!-- Hidden video block -->
       <div class="abstract hidden">
         <div style="text-align: center;">{% include video.liquid path=entry.video class="img-fluid rounded z-depth-1" controls=true %}</div>
       </div>
